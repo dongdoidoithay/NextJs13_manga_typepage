@@ -137,7 +137,7 @@ const FotterPage = () => {
                         <div id="histatsC"><img  src={`https://s4is.histats.com/stats/i/${sid}.gif?${sid}&103`} alt={config.configSetting.lbl_Name_Page}/></div>
                     </Link>}
                
-                 <Link href="//www.dmca.com/Protection/Status.aspx?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" title="DMCA.com Protection Status" className="dmca-badge">
+                 <Link href="https://www.dmca.com/Protection/Status.aspx?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" title="DMCA.com Protection Status" className="dmca-badge">
                     <img src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" alt="DMCA.com Protection Status" />
                 </Link> 
                 <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" async/> 
