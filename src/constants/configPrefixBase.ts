@@ -1,7 +1,7 @@
-/* export  const _host="http://localhost:5213";
-export const _hostwww="http://www.localhost:5213"; */
-export const _host="https://www.mangaupdates.lol";
-export const _hostwww="https://www.mangaupdates.lol"; 
+export  const _host="http://localhost:4027";
+export const _hostwww="http://www.localhost:4027";
+/* export const _host="https://www.mangaupdates.lol";
+export const _hostwww="https://www.mangaupdates.lol";  */
 
 
 export const _Prefix_Root_Manga_Br='manga-br';

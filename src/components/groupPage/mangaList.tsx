@@ -1,4 +1,4 @@
-"use client";
+
 import { useState } from "react";
 import MangaByGroup from "./mangaByGroup";
 import clsx from "clsx";

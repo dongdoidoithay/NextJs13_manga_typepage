@@ -15,8 +15,7 @@ import getDate from "@/utils/caldate";
 import ImageLoading from "@/ui/ImageLoading";
 import { useState } from "react";
 import { Boundary } from "@/ui/boundary";
-import Link from "next/link";
-import { Helmet } from "react-helmet";
+
 import baseSeo from "@/constants/baseSeo";
 
 const FetchDataTrend = async (config: MangaLang) => {
@@ -184,9 +183,6 @@ const SliderHome = ({ typeManga }: any) => {
   
   return (
     <>
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(json_ld)}</script>
-      </Helmet>
       <Boundary labels={config.configSetting.Lbl_Home_Hot}/>
       <div className="flex flex-col lg:flex-row">
         <div className="flex w-full lg:w-1/3 ">

@@ -10,8 +10,8 @@ export default function Document() {
 
 
 
-          {/* Google tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV99NPQWNC"></script>
+        {/* Google tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV99NPQWNC"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `

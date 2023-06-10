@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4027",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 4027",
     "lint": "next lint"
   },
   "dependencies": {
@@ -28,7 +28,6 @@
     "react": "18.2.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "18.2.0",
-    "react-helmet": "^6.1.0",
     "react-query": "^3.39.3",
     "react-toastify": "^9.1.2",
     "svg-captcha": "^1.4.0",

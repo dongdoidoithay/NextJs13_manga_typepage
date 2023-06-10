@@ -6,6 +6,7 @@ import {
   apiConfigPath,
 } from "@/constants/configBase";
 import { getStorage, setStorage } from "@/utils/localFx";
+import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
@@ -114,31 +115,31 @@ const FotterPage = () => {
       <div className="w-full h-80 pl-0  lg:pl-56 mt-14 bottom-0 ">
         <div id="heder" className="h-7 rounded bg-slate-700/70 align-middle justify-center ">
           <ul className="flex flex-row gap-3 align-middle justify-center items-center">
-            <li ><a title="Site map " href={`${config.configPrefix.url_host}/api/server-sitemap.xml`}>SiteMap</a></li>
-            <li ><a title="Site map " href={`${config.configPrefix.url_host}/api/sitemap.html`}>Google SiteMap</a></li>
-            <li ><a title="Site map " href={`${config.configPrefix.url_host}/api/urllist.txt`}>Bing SiteMap</a></li>
+            <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/server-sitemap.xml`}>SiteMap</Link></li>
+            <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/sitemap.html`}>Google SiteMap</Link></li>
+            <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/urllist.txt`}>Bing SiteMap</Link></li>
           </ul>
         </div>
         <div id="box-inf" className="flex flex-col gap-3  bg-slate-900/70 border border-slate-700">
           <AdsFooter/>
           <div className="flex flex-row">
             <div id="box-left" className="w-1/5 flex flex-col gap-2 flex-1 items-center">
-              <a href="/" title={config.configSetting.lbl_Name_Page}>
+              <Link href="/" title={config.configSetting.lbl_Name_Page}>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: config.configSetting.lbl_Name_Page,
                   }}
                   className="text-xl font-semibold first-line:uppercase first-letter:text-2xl first-letter:font-bold"
                 ></div>
-              </a>
+              </Link>
         
-                 {sid&& sid!=''&& <a href={`https://www.histats.com/viewstats/?SID=${sid}&f=2`} target="_blank" >
+                 {sid&& sid!=''&& <Link href={`https://www.histats.com/viewstats/?SID=${sid}&f=2`} target="_blank" >
                         <div id="histatsC"><img  src={`https://s4is.histats.com/stats/i/${sid}.gif?${sid}&103`} alt={config.configSetting.lbl_Name_Page}/></div>
-                    </a>}
+                    </Link>}
                
-                 <a href="//www.dmca.com/Protection/Status.aspx?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" title="DMCA.com Protection Status" className="dmca-badge">
+                 <Link href="//www.dmca.com/Protection/Status.aspx?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" title="DMCA.com Protection Status" className="dmca-badge">
                     <img src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=e4da793f-4aab-437a-85bc-033cbafb0b7c" alt="DMCA.com Protection Status" />
-                </a> 
+                </Link> 
                 <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" async/> 
             </div>
             <div id="box-right" className="w-4/5">
@@ -149,7 +150,7 @@ const FotterPage = () => {
                 <div className="text-xs">
                     {dataDomain && dataDomain.map((item:any,index:number)=>{
                             return(
-                                <a className="hover:text-sky-500 dark:hover:text-sky-400 before:content-['↗_'] after:content-[',_']" key={item.domain+'-'+index} title={item.domain_name} href={`https://${item.domain}`}>{item.domain_name}</a>
+                                <Link className="hover:text-sky-500 dark:hover:text-sky-400 before:content-['↗_'] after:content-[',_']" key={item.domain+'-'+index} title={item.domain_name} href={`https://${item.domain}`}>{item.domain_name}</Link>
                             )
                     })}
                 </div>

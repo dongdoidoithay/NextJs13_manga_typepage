@@ -1,4 +1,4 @@
-"use client";
+
 
 import { SelectMangaTypeByPage } from "@/constants/configBase";
 import getDate from "@/utils/caldate";

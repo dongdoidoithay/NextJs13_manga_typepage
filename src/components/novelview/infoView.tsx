@@ -12,7 +12,7 @@ import ContenViewSkeletion from "./contenViewSkeletion";
 import DisqusComments from "../mangaInfo/disquscomment";
 import InfoActionViewBt from "./infoActionViewBt";
 import AdsDetail from "../ads/ads_detail";
-import { Helmet } from "react-helmet";
+
 import SeoHead from "../mangaInfo/seoHead";
 
 const InfoViewNovels = ({ config, data ,loading}: { config: MangaLang, data: any,loading:boolean }) => {

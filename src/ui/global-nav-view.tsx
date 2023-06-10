@@ -1,6 +1,5 @@
-"use client";
-import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+
+
 import {
   Bars4Icon,
   BoltIcon,
@@ -9,7 +8,6 @@ import {
   HomeIcon,
   ListBulletIcon,
   MagnifyingGlassCircleIcon,
-  MagnifyingGlassIcon,
   SquaresPlusIcon,
   TagIcon,
   XMarkIcon,
@@ -19,6 +17,9 @@ import { SubnNav } from "./sub-nav";
 import clsx from "clsx";
 import { _hostwww } from "@/constants/configPrefixBase";
 import { MangaSource, MenuLeft, SelectMangaTypeByPage } from "@/constants/configBase";
+import Link from "next/link";
+import { useRouter } from 'next/router'
+
 
 export function GlobalNavView() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +36,10 @@ export function GlobalNavView() {
       <div className="sticky z-50 lg:hidden lg:fixed top-0 flex w-full flex-col border-b border-gray-800 lg:bottom-0 lg:w-60 lg:border-b-0 lg:border-r lg:border-gray-800 ">
 
         <div className="flex h-14 items-center py-4 px-4 lg:h-auto z-50  bg-slate-950 ">
-          <a
+          <Link
             className="group flex w-full items-center gap-x-2.5"
             onClick={close}
+            href={"#"}
           >
             <div className="h-7 w-7 ">
 
@@ -47,7 +49,7 @@ export function GlobalNavView() {
                   <div dangerouslySetInnerHTML={{ __html: config.configSetting.lbl_Name_Page }}></div>
                 
               </h3>
-          </a>
+          </Link>
           <button
             type="button"
             className="group absolute left-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-7"
@@ -60,12 +62,12 @@ export function GlobalNavView() {
               <Bars4Icon className="block w-6  text-orange-500" />
             )}
           </button>
-          <a className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-2"
+          <Link className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-2"
               href="/search"
               onClick={handleClick}>
               {loading ? <BoltIcon className="block w-7  text-orange-500" /> :<MagnifyingGlassCircleIcon className="block w-9 text-sky-500" />
               }              
-           </a> 
+           </Link> 
 
         </div>
 
@@ -100,8 +102,10 @@ function NavItem({
   item: MangaSource,
   idx: number
 }) {
-  const segment = usePathname();
-  const isActive = segment.includes("/" + item.value);
+  //const segment = usePathname();
+  //const isActive = segment.includes("/" + item.value);
+  const router = useRouter()
+  const isActive = router.asPath.includes("/" + item.value);
   let _link = `${_hostwww}/${item.value}`;
 
   let _target: any = '_self';

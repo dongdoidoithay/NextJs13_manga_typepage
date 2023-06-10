@@ -1,4 +1,4 @@
-"use client";
+
 import { FetchApi } from "@/constants/FetchApi";
 import baseSeo from "@/constants/baseSeo";
 import { MangaLang } from "@/constants/configBase";
@@ -15,10 +15,8 @@ import {
   RectangleGroupIcon,
 } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import Head from "next/head";
-import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 
@@ -451,13 +449,13 @@ const handleClick = (index:number) => {
 
   return (
     <>
-     {isSeo && <Helmet>
+     {/* {isSeo && <Helmet>
         <script type="application/ld+json">{JSON.stringify(json_ld)}</script>
       </Helmet>
-      }
-      <Helmet>
+      } */}
+     {/*  <Helmet>
         <script type="application/ld+json">{JSON.stringify(json_chapter_ld)}</script>
-      </Helmet>
+      </Helmet> */}
 
       <div id="chapter-list" className="">
         <div id="header-list" className="flex flex-row h-8 my-3">

@@ -1,4 +1,4 @@
-"use client";
+
 import { FetchApi } from "@/constants/FetchApi";
 import {
   MangaLang,

@@ -1,4 +1,4 @@
-"use client"
+
 import AdsTop from "@/components/ads/ads_top_body";
 import DisqusComments from "@/components/mangaInfo/disquscomment";
 import InfoManga from "@/components/mangaInfo/infoManga";
@@ -20,14 +20,14 @@ const FetchData = async (config: MangaLang, idmanga: string) => {
   return await FetchApi(config.apiPath + config.endPointPath.infoManga + idmanga);
 }
 
-const Info = ({ params }: { params: { type: string, idmanga: string } }) => {
+const Info = () => {
   const router = useRouter();
   let config = SelectMangaTypeByPage('');
   let _idmanga = '';
-  if (params.type != undefined)
-    config = SelectMangaTypeByPage(params.type.toString());
-  if (params.idmanga != undefined) {
-    _idmanga = params.idmanga.toString().replace(config.configPrefix.startManga, '').replace(config.configPrefix.endManga, '');
+  if (router.query.type != undefined)
+    config = SelectMangaTypeByPage(router.query.type.toString());
+  if (router.query.idmanga != undefined) {
+    _idmanga = router.query.idmanga.toString().replace(config.configPrefix.startManga, '').replace(config.configPrefix.endManga, '');
   }
 
   let _dataManga = useQuery(['GetInfoManga', _idmanga, config.typeName], () => FetchData(config, _idmanga), { retry: 10, staleTime: 10000, cacheTime: 5000, keepPreviousData: true, refetchOnWindowFocus: false });

@@ -1,11 +1,9 @@
-"use client";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-// import required modules
 
-import "@/styles/slide.css";
 
 import { MangaLang, SelectMangaTypeByPage } from "@/constants/configBase";
 import { FetchApi } from "@/constants/FetchApi";

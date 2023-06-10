@@ -1,4 +1,4 @@
-"use client";
+
 import { ITEM_PAGE_COUNT } from "@/constants/Endpoint";
 import { FetchApi } from "@/constants/FetchApi";
 import { MangaLang, SelectMangaTypeByPage } from "@/constants/configBase";

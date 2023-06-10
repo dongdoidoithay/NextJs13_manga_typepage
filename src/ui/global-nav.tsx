@@ -1,18 +1,14 @@
-"use client";
+
 import Link from "next/link";
 import {
   ArrowPathIcon,
-  Bars2Icon,
   Bars4Icon,
   BoltIcon,
   ChatBubbleLeftIcon,
   FireIcon,
-  HashtagIcon,
   HomeIcon,
   ListBulletIcon,
   MagnifyingGlassCircleIcon,
-  MagnifyingGlassIcon,
-  QueueListIcon,
   RectangleGroupIcon,
   SquaresPlusIcon,
   TagIcon,
@@ -20,12 +16,11 @@ import {
 } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 import { useState } from "react";
-import { ActMangaSource, MangaSource, MenuLeft, SelectMangaTypeByPage } from "@/constants/configBase";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { MangaSource, MenuLeft, SelectMangaTypeByPage } from "@/constants/configBase";
 import { _hostwww } from "@/constants/configPrefixBase";
-import { usePathname } from 'next/navigation';
 import { SubnNav } from "./sub-nav";
 import Byline from "./byline";
+import { useRouter } from 'next/router'
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,13 +38,13 @@ export function GlobalNav() {
       <div className="sticky lg:fixed top-0 z-40 flex w-full bg-slate-950 flex-col border-b border-gray-800 lg:bottom-0 lg:z-auto lg:w-60 lg:border-b-0 lg:border-r lg:border-gray-800 ">
 
         <div className="flex h-14 items-center py-4 px-4 lg:h-auto z-50 ">
-          <a className="group flex w-full items-center gap-x-2.5 " onClick={close}>
+          <Link className="group flex w-full items-center gap-x-2.5 " onClick={close} href={'#'}>
             <div className="h-7 w-7 ">
             </div>
             <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50 text-xl first-line:uppercase first-letter:text-2xl first-letter:font-bold lg:hidden">
               <div dangerouslySetInnerHTML={{ __html: config.configSetting.lbl_Name_Page }}></div>
             </h3>
-          </a>
+          </Link>
           <button
             type="button"
             className="group absolute left-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-7"
@@ -60,12 +55,12 @@ export function GlobalNav() {
               <Bars4Icon className="block w-6 font-semibold text-orange-500" />
             )}
           </button>
-          <a className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-2"
+          <Link className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden mr-2"
               href="/search"
               onClick={handleClick}>
               {loading ? <BoltIcon className="block w-7  text-orange-500" /> :<MagnifyingGlassCircleIcon className="block w-9 text-sky-500" />
               }              
-           </a> 
+           </Link> 
 
         </div>
 
@@ -128,9 +123,10 @@ function NavItem({
   const handleClick = () => {
     setLoading(true);
   };
-
-  const segment = usePathname();
-  const isActive = segment.includes("/" + item.value);
+  const router = useRouter()
+  //const segment = usePathname();
+  //console.log("Path",router)
+  const isActive = router.asPath.includes("/" + item.value);
   let _link = `${_hostwww}/${item.value}`;
 
   let _target: any = '_self';

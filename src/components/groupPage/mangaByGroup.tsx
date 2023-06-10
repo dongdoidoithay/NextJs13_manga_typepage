@@ -1,18 +1,16 @@
-"use client";
+
 import { FetchApi } from '@/constants/FetchApi';
 import { MangaLang, SelectMangaTypeByPage } from '@/constants/configBase';
 import ImageLoading from '@/ui/ImageLoading';
 import { Boundary } from '@/ui/boundary';
 import getDate from '@/utils/caldate';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
-import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { useQuery } from 'react-query';
 
-
 const FetchData = async (config: MangaLang, typeApi: string, idFind: string, page: any) => {
-    console.log("FetchData",{typeApi,idFind,page});
+  //  console.log("FetchData",{typeApi,idFind,page});
   let _fixid = '';
   if (idFind != '' && idFind != null && idFind != undefined && page != undefined && page != null) {
     switch(typeApi) 
@@ -82,6 +80,7 @@ const FetchData = async (config: MangaLang, typeApi: string, idFind: string, pag
     return null;
 }
 const MangaByGroup = ({ typeManga, typeApi, idFind, pageIndex}:any) => {
+
   let config = SelectMangaTypeByPage(typeManga);
   const [page, setPage] = useState(pageIndex);
   const sectionRef = useRef<HTMLDivElement>(null);
