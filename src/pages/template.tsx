@@ -1,4 +1,4 @@
-"use client";
+
 
 import { SelectMangaTypeByPage } from "@/constants/configBase";
 import React, { useEffect, useRef, useState } from "react";

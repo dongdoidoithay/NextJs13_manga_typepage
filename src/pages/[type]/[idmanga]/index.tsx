@@ -4,18 +4,15 @@ import DisqusComments from "@/components/mangaInfo/disquscomment";
 import InfoManga from "@/components/mangaInfo/infoManga";
 import InfoMangaSkeletion from "@/components/mangaInfo/infoMangaSkeletion";
 import { FetchApi } from "@/constants/FetchApi";
-import baseSeo from "@/constants/baseSeo";
 import { MangaLang, SelectMangaTypeByPage, SelectMangaTypeName } from "@/constants/configBase";
 import { GlobalNav } from "@/ui/global-nav";
 import {
   ChevronRightIcon,
   HomeIcon,
 } from "@heroicons/react/20/solid";
-import { Metadata } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { useQuery } from "react-query";
-
+import { useRouter } from 'next/router'
 
 
 
@@ -24,6 +21,7 @@ const FetchData = async (config: MangaLang, idmanga: string) => {
 }
 
 const Info = ({ params }: { params: { type: string, idmanga: string } }) => {
+  const router = useRouter();
   let config = SelectMangaTypeByPage('');
   let _idmanga = '';
   if (params.type != undefined)

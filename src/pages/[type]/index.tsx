@@ -1,14 +1,14 @@
 import baseSeo from "@/constants/baseSeo";
 import { GlobalNav } from "@/ui/global-nav";
 import { Metadata } from "next";
-import SliderHome from ".@/components/homePage/slideHome";
-import PopupHome from ".@/components/homePage/popupHome";
-import LastUpdateHome from ".@/components/homePage/lastUpdate";
-import TopComment from ".@/components/homePage/topComments";
-import HistoryHome from ".@/components/homePage/historyHome";
-import AdsTop from ".@/components/ads/ads_top_body";
-import AdsDetail from ".@/components/ads/ads_detail";
-import AdsViews from ".@/components/ads/ads_view";
+import SliderHome from "@/components/homePage/slideHome";
+import PopupHome from "@/components/homePage/popupHome";
+import LastUpdateHome from "@/components/homePage/lastUpdate";
+import TopComment from "@/components/homePage/topComments";
+import HistoryHome from "@/components/homePage/historyHome";
+import AdsTop from "@/components/ads/ads_top_body";
+import AdsDetail from "@/components/ads/ads_detail";
+import AdsViews from "@/components/ads/ads_view";
 import Head from "next/head";
 
 export const metadata: Metadata = {

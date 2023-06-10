@@ -1,12 +1,12 @@
-"use client";
+
 import { SelectMangaTypeByPage } from "@/constants/configBase";
 import ImageLoading from "@/ui/ImageLoading";
 import { Boundary } from "@/ui/boundary";
 import getDate from "@/utils/caldate";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AdsTop from ".@/components/ads/ads_top_body";
-import AdsDetail from ".@/components/ads/ads_detail";
+import AdsTop from "@/components/ads/ads_top_body";
+import AdsDetail from "@/components/ads/ads_detail";
 import { getStorage } from "@/utils/localFx";
 import { GlobalNav } from "@/ui/global-nav";
 

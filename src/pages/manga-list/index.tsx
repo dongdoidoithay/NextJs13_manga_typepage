@@ -2,9 +2,9 @@
 import baseSeo from "@/constants/baseSeo";
 import { GlobalNav } from "@/ui/global-nav";
 import { Metadata } from "next";
-import PageMangaList from ".@/components/groupPage/mangaList";
-import AdsTop from ".@/components/ads/ads_top_body";
-import AdsDetail from ".@/components/ads/ads_detail";
+import PageMangaList from "@/components/groupPage/mangaList";
+import AdsTop from "@/components/ads/ads_top_body";
+import AdsDetail from "@/components/ads/ads_detail";
 
 export const metadata: Metadata = {
   title: "Manga list Page",

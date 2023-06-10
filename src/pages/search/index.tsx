@@ -1,4 +1,4 @@
-"use client";
+
 import { FetchApi } from "@/constants/FetchApi";
 import { MangaLang, SelectMangaTypeByPage } from "@/constants/configBase";
 import ImageLoading from "@/ui/ImageLoading";
@@ -9,8 +9,8 @@ import { ChevronLeftIcon, ChevronRightIcon, MagnifyingGlassIcon } from "@heroico
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { useQuery } from "react-query";
-import AdsTop from ".@/components/ads/ads_top_body";
-import AdsDetail from ".@/components/ads/ads_detail";
+import AdsTop from "@/components/ads/ads_top_body";
+import AdsDetail from "@/components/ads/ads_detail";
 import baseSeo from "@/constants/baseSeo";
 
 const FetchData = async (config: MangaLang, keysearch: string, pageParam: number) => {
