@@ -1,41 +1,57 @@
 import {
   AdultBrPrefix,
   AdultPrefix,
+  AdultRuPrefix,
   ConfigPrefix,
   DcPrefix,
   MangaBrPrefix,
+  MangaRuPrefix,
   NewsDcPrefix,
   NovelPrefix,
   RawPrefix,
   ScanPrefix,
+  VideoRuPrefix,
+  YaoiRuPrefix,
   _Prefix_Root_Adult,
   _Prefix_Root_Adult_Br,
+  _Prefix_Root_Adult_Ru,
   _Prefix_Root_Dc,
   _Prefix_Root_Manga_Br,
+  _Prefix_Root_Manga_Ru,
   _Prefix_Root_NewsDc,
   _Prefix_Root_Novel,
   _Prefix_Root_Raw,
   _Prefix_Root_Scan,
+  _Prefix_Root_Video_Ru,
+  _Prefix_Root_Yaoi_Ru,
   _Prefix_Type_Adult,
   _Prefix_Type_Adult_Br,
+  _Prefix_Type_Adult_Ru,
   _Prefix_Type_Dc,
   _Prefix_Type_Manga_Br,
+  _Prefix_Type_Manga_Ru,
   _Prefix_Type_NewsDc,
   _Prefix_Type_Novel,
   _Prefix_Type_Raw,
   _Prefix_Type_Scan,
+  _Prefix_Type_Video_Ru,
+  _Prefix_Type_Yaoi_Ru,
   _hostwww,
 } from "./configPrefixBase";
 import {
   AdultBrSetting,
+  AdultRuSetting,
   AdultSetting,
   ConfigSetting,
   DcSetting,
   MangaBrSetting,
+  MangaRuSetting,
   NewsDcSetting,
   NovelSetting,
   RawSetting,
   ScanSetting,
+  VideoRuSetting,
+  YaoiRuSetting,
 } from "./configSettingBase";
 import {
   EndpointSetting,
@@ -86,6 +102,25 @@ export const MenuLeft: MangaSource[] = [
     value: 'bookmark',
     icon:"bookmark",
   }, 
+  {
+    lable: "Mанга",
+    value: _Prefix_Root_Manga_Ru,
+    icon:"cate"
+  }, 
+  {
+    lable: "Манги взрослый",
+    value: _Prefix_Root_Adult_Ru,
+    icon:"cate"
+  }, 
+  /* {
+    lable: "Кино",
+    value: _Prefix_Root_Video_Ru,
+  },  */
+  {
+    lable: "яой манга",
+    value: _Prefix_Root_Yaoi_Ru,
+    icon:"cate"
+  }, 
   //bookmark
   {
     lable: "Manga Scan",
@@ -111,7 +146,7 @@ export const MenuLeft: MangaSource[] = [
     lable: "Novel Light",
     value: _Prefix_Root_Novel,
     icon:"cate"
-  },
+  }, 
   {
     lable: "Mangás português",
     value: _Prefix_Root_Manga_Br,
@@ -131,7 +166,22 @@ export const MenuLeft: MangaSource[] = [
   
 ];
 export const ActMangaSource: MangaSource[] = [
- 
+  {
+    lable: "Mанга",
+    value: _Prefix_Root_Manga_Ru,
+  }, 
+  {
+    lable: "Манги взрослый",
+    value: _Prefix_Root_Adult_Ru,
+  }, 
+  /* {
+    lable: "Кино",
+    value: _Prefix_Root_Video_Ru,
+  },  */
+  {
+    lable: "яой манга",
+    value: _Prefix_Root_Yaoi_Ru,
+  }, 
   {
     lable: "Manga Scan",
     value: _Prefix_Root_Scan,
@@ -164,6 +214,22 @@ export const ActMangaSource: MangaSource[] = [
 ];
 
 export const ActSourceList: MangaSource[] = [
+  {
+    lable: "Mанга",
+    value: _Prefix_Root_Manga_Ru,
+  }, 
+  {
+    lable: "Манги взрослый",
+    value: _Prefix_Root_Adult_Ru,
+  }, 
+  /* {
+    lable: "Кино",
+    value: _Prefix_Root_Video_Ru,
+  },  */
+  {
+    lable: "яой манга",
+    value: _Prefix_Root_Yaoi_Ru,
+  }, 
 /*   {
     lable: "All",
     value: 'all',
@@ -184,10 +250,10 @@ export const ActSourceList: MangaSource[] = [
     lable: "Manga Adult",
     value: _Prefix_Root_Adult,
   },
-  {
+{
     lable: "Novel Light",
     value: _Prefix_Root_Novel,
-  },
+  }, 
   {
     lable: "Mangás português",
     value: _Prefix_Root_Manga_Br,
@@ -222,7 +288,7 @@ export const FontSource: MangaSource[] = [
 ];
 
 export const apiConfigPath = "https://api.mangakatana.xyz/api/v1/config";
-/* const apiRootPath="https://api.truyendich.xyz/api"; */
+/* const apiRootPath="https://api.yaoi-chan.xyz/api"; */
 const apiRootPath="https://api.mangakatana.xyz/api";
 export type MangaLang = {
   typeName: string;
@@ -308,7 +374,7 @@ const Novel: MangaLang = {
   typeName: _Prefix_Root_Novel,
   typeManga: _Prefix_Type_Novel,
   apiPath: apiRootPath + "/novels",
-  /*  apiPath:"https://api.truyendich.xyz/api/novels", */
+  /*  apiPath:"https://api.yaoi-chan.xyz/api/novels", */
   endPointPath: EndpointSetting,
   localKey: LocalKey,
 
@@ -335,13 +401,64 @@ const NewsDc: MangaLang = {
   typeName: _Prefix_Root_NewsDc,
   typeManga: _Prefix_Type_NewsDc,
   apiPath: "https://api.pandamanga.xyz/api/v1/news",
-  //apiPath: "https://api.truyendich.xyz/api/v1/news",
+  //apiPath: "https://api.yaoi-chan.xyz/api/v1/news",
   endPointPath: EndpointSetting,
   localKey: LocalKey,
 
   configPrefix: NewsDcPrefix,
   activeSource: ActMangaSource,
   configSetting: NewsDcSetting,
+  listSource: ActSourceList
+};
+
+//ru
+const MangaRu: MangaLang = {
+  typeName: _Prefix_Root_Manga_Ru,
+  typeManga: _Prefix_Type_Manga_Ru,
+  apiPath: apiRootPath+"/ru-manga",
+
+  endPointPath: EndpointSetting,
+  localKey: LocalKey,
+
+  configPrefix: MangaRuPrefix,
+  activeSource: ActMangaSource,
+  configSetting: MangaRuSetting,
+  listSource: ActSourceList
+};
+const AdultRu: MangaLang = {
+  typeName: _Prefix_Root_Adult_Ru,
+  typeManga: _Prefix_Type_Adult_Ru,
+  apiPath: apiRootPath+"/ru-hentai",
+  endPointPath: EndpointSetting,
+  localKey: LocalKey,
+
+  configPrefix: AdultRuPrefix,
+  activeSource: ActMangaSource,
+  configSetting: AdultRuSetting,
+  listSource: ActSourceList
+};
+const VideoRu: MangaLang = {
+  typeName: _Prefix_Root_Video_Ru,
+  typeManga: _Prefix_Type_Video_Ru,
+  apiPath: apiRootPath+"/ru-hentai-video",
+  endPointPath: EndpointSetting,
+  localKey: LocalKey,
+
+  configPrefix: VideoRuPrefix,
+  activeSource: ActMangaSource,
+  configSetting: VideoRuSetting,
+  listSource: ActSourceList
+};
+const YaoiRu: MangaLang = {
+  typeName: _Prefix_Root_Yaoi_Ru,
+  typeManga: _Prefix_Type_Yaoi_Ru,
+  apiPath: apiRootPath+"/ru",
+  endPointPath: EndpointSetting,
+  localKey: LocalKey,
+
+  configPrefix: YaoiRuPrefix,
+  activeSource: ActMangaSource,
+  configSetting: YaoiRuSetting,
   listSource: ActSourceList
 };
 
@@ -373,9 +490,23 @@ export const SelectMangaTypeByPage = (type: string): MangaLang => {
     case _Prefix_Root_NewsDc:
       selectType = NewsDc;
       break;
-    default:
-      selectType = MangaScan;
-      break;
+   //ru
+      case _Prefix_Root_Manga_Ru:
+        selectType = MangaRu;
+        break;
+      case _Prefix_Root_Adult_Ru:
+        selectType = AdultRu;
+        break;
+      case _Prefix_Root_Video_Ru:
+        selectType = VideoRu;
+        break;
+      case _Prefix_Root_Yaoi_Ru:
+        selectType = YaoiRu;
+        break;
+  
+      default:
+        selectType = MangaRu;
+        break;
   }
   return selectType;
 };

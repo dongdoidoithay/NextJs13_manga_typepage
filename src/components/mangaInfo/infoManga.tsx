@@ -5,8 +5,9 @@ import  InfoActionBlock  from "./InfoBlock";
 import RenderChapterList from "./renderChapterList";
 import InfoHeaderBlock from "./InfoHeaderBlock";
 import InfoOtherBlock from "./InfoOtherBlock";
-import AdsDetail from "../ads/ads_detail";
+import AdsDetail from "../../ads/ads_detail";
 import SeoHead from "./seoHead";
+import { ArticleJsonLd, NextSeo } from "next-seo";
 
 
 
@@ -69,8 +70,70 @@ import SeoHead from "./seoHead";
 
   return (
     <>
-    <SeoHead title={title} desc={des_full} image={dataManga.image} key_word={key_word} locale={null} url={url}  />
-    
+    <NextSeo
+      title={title}
+      description={des_meta}
+      canonical={url}
+
+      openGraph={{
+        title: title,
+        description: des_full,
+        url: url,
+        type: 'article',
+        article: {
+          publishedTime: new Date().toISOString(),
+          modifiedTime: new Date().toISOString(),
+          expirationTime: new Date().toISOString(),
+          section: "News",
+          authors: [
+            dataManga.listAuthors && dataManga.listAuthors.map((auth: any) => {
+              return (
+                `${config.configPrefix.url_host}${config.configPrefix.pageAuth}/${config.configPrefix.startAuth}${auth.id}${config.configPrefix.endAuth}`
+              )
+            }
+            )
+          ],
+          tags: [
+            key_word
+          ],
+        },
+        images: [
+          {
+            url: dataManga.image,
+            alt: dataManga.name,
+          },
+        ],
+      }
+      }
+
+      additionalMetaTags={[{
+        property: 'keywords',
+        content: key_word
+      }]}
+      additionalLinkTags={[{
+        rel: "alternate",
+        href: `${config.configPrefix.url_host}/api${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${dataManga.idDoc}${config.configPrefix.endManga}/feed`,
+        type: "application/rss+xml"
+      },
+      {
+        rel: "alternate",
+        href: `${config.configPrefix.url_host}/api${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${dataManga.idDoc}${config.configPrefix.endManga}/rss.xml`,
+        type: "application/rss+xml"
+      }
+      ]}
+    />
+
+    <ArticleJsonLd
+      url={url}
+      title={title}
+      images={[dataManga.image,]}
+      datePublished={new Date().toISOString()}
+      dateModified={new Date().toISOString()}
+      authorName={[name_author_org]}
+      publisherName={name_author_org}
+      publisherLogo={dataManga.image}
+      description={des_full}
+    />
      
      <InfoHeaderBlock config={config} dataManga={dataManga}/>
      <InfoActionBlock id={id}  des_full={des_full} config={config} dataManga={dataManga}/>

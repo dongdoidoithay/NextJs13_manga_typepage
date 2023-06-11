@@ -11,7 +11,7 @@ import InfoActionViewSkeletion from "./infoActionViewSkeletion";
 import ContenViewSkeletion from "./contenViewSkeletion";
 import DisqusComments from "../mangaInfo/disquscomment";
 import InfoActionViewBt from "./infoActionViewBt";
-import AdsDetail from "../ads/ads_detail";
+import AdsDetail from "../../ads/ads_detail";
 
 import SeoHead from "../mangaInfo/seoHead";
 

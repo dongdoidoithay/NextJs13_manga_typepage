@@ -15,6 +15,8 @@ import {
   RectangleGroupIcon,
 } from "@heroicons/react/20/solid";
 import clsx from "clsx";
+import { BreadcrumbJsonLd } from "next-seo";
+import Head from "next/head";
 import { useState, useEffect } from "react";
 
 import { useQuery } from "react-query";
@@ -447,15 +449,59 @@ const handleClick = (index:number) => {
 };
 
 
+let Itemelement:any=[];
+if(!isFetchingChapter &&
+  !isLoadingChapter &&
+  dataChapter &&
+  dataChapter.data ){
+    Itemelement= dataChapter.data.map((item: any, indx: number) => {
+
+  if (item.idDoc != null && item.idDoc != undefined) {
+    const url_part=`${config.configPrefix.url_host}${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${item.idDoc}${config.configPrefix.endManga}/${config.configPrefix.startViewmanga}${item.idDetail}${config.configPrefix.endViewmanga}`;
+      
+    return (
+          {
+              position: indx + 4,
+              name: `${config.configSetting.lbl_text_chapter} ${item.idDetail}`,
+              item: url_part
+          }
+      )
+  }
+}
+);
+  }
+
   return (
     <>
-     {/* {isSeo && <Helmet>
+     {isSeo && <Head>
         <script type="application/ld+json">{JSON.stringify(json_ld)}</script>
-      </Helmet>
-      } */}
+      </Head>
+      }
      {/*  <Helmet>
         <script type="application/ld+json">{JSON.stringify(json_chapter_ld)}</script>
       </Helmet> */}
+
+<BreadcrumbJsonLd
+                itemListElements={
+                  [{
+                    position: 1,
+                    name: "Home",
+                    item: baseSeo.canonical
+                  },
+                  {
+                    position: 2,
+                    name: "Type Manga",
+                    item: `${config.configPrefix.url_host}${config.configPrefix.pageManga}`
+                  },
+                  {
+                   position: 3,
+                    name: mangaName,
+                    item: `${config.configPrefix.url_host}${config.configPrefix.pageManga}/${config.configPrefix.startManga}${_fixid}${config.configPrefix.endManga}`
+                  },
+                 ...Itemelement
+                 ] 
+                }
+            />  
 
       <div id="chapter-list" className="">
         <div id="header-list" className="flex flex-row h-8 my-3">

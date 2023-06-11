@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .swiper {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%  !important;
+    height: 100%  !important;
+    margin-left: auto  !important;
+    margin-right: auto  !important;
   }
   
   .swiper-slide {
@@ -16,7 +16,7 @@
    /*  height: 80px; */
   
     /* Center slide text vertically */
-    display: flex;
+    display: flex  !important;
    /*  justify-content: center;
     align-items: center; */
   }

@@ -1,9 +1,8 @@
 import ImageLoading from '@/ui/ImageLoading';
-import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
-import AdsViews from '../ads/ads_view';
-import AdsDetail from '../ads/ads_detail';
+import AdsViews from '../../ads/ads_view';
+import AdsDetail from '../../ads/ads_detail';
 
 const ContenView = ({ config, viewMode, data, listImg, SetlistImg, CurrentImage, ImageSelect, SetCurrentImage, SetImageSelect, prev_img, next_img }: any) => {
 

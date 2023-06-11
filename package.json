@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4027",
+    "dev": "next dev -p 5016",
     "build": "next build",
-    "start": "next start -p 4027",
+    "start": "next start -p 5016",
     "lint": "next lint"
   },
   "dependencies": {
@@ -21,8 +21,10 @@
     "lru-cache": "^8.0.5",
     "md5": "^2.3.0",
     "next": "13.4.4",
+    "next-connect": "^0.13.0",
     "next-pwa": "^5.6.0",
     "next-seo": "^6.0.0",
+    "next-sitemap": "^4.1.3",
     "nextjs-progressbar": "^0.0.16",
     "postcss": "8.4.24",
     "react": "18.2.0",

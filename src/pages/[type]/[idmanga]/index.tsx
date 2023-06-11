@@ -1,5 +1,5 @@
 
-import AdsTop from "@/components/ads/ads_top_body";
+import AdsTop from "@/ads/ads_top_body";
 import DisqusComments from "@/components/mangaInfo/disquscomment";
 import InfoManga from "@/components/mangaInfo/infoManga";
 import InfoMangaSkeletion from "@/components/mangaInfo/infoMangaSkeletion";

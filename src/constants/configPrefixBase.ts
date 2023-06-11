@@ -1,8 +1,7 @@
-export  const _host="http://localhost:4027";
-export const _hostwww="http://www.localhost:4027";
-/* export const _host="https://www.mangaupdates.lol";
-export const _hostwww="https://www.mangaupdates.lol";  */
-
+/* export  const _host="http://localhost:5016";
+export const _hostwww="http://www.localhost:5016"; */
+export const _host="https://www.yaoi-chan.xyz";
+export const _hostwww="https://www.yaoi-chan.xyz"; 
 
 export const _Prefix_Root_Manga_Br='manga-br';
 export const _Prefix_Root_Adult_Br='adult-br';
@@ -12,6 +11,12 @@ export const _Prefix_Root_Adult='adult';
 export const _Prefix_Root_Dc='comics';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
+//ru
+export const _Prefix_Root_Adult_Ru='hentai';
+export const _Prefix_Root_Manga_Ru='mangas';
+export const _Prefix_Root_Video_Ru='video';
+export const _Prefix_Root_Yaoi_Ru='yaoi';
+
 
 export const _Prefix_Type_Adult_Br='adult-br';
 export const _Prefix_Type_Manga_Br='manga-br';
@@ -21,7 +26,11 @@ export const _Prefix_Type_Adult='adult';
 export const _Prefix_Type_Dc='comic';
 export const _Prefix_Type_Novel='novel';
 export const _Prefix_Type_NewsDc='blog';
-
+//ru
+export const _Prefix_Type_Adult_Ru='adult-ru';
+export const _Prefix_Type_Yaoi_Ru='yaoi-ru';
+export const _Prefix_Type_Video_Ru='video-ru';
+export const _Prefix_Type_Manga_Ru='manga-ru';
 
 export type ConfigPrefix ={
     pageManga:string;
@@ -88,7 +97,7 @@ export const MangaBrPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"capitulo-",
+    startViewmanga:"cap-",
    
 
     endGenre:"",
@@ -132,7 +141,7 @@ export const AdultBrPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"capitulo-",
+    startViewmanga:"cap-",
    
 
     endGenre:"",
@@ -176,7 +185,7 @@ export const ScanPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"chapter-",
+    startViewmanga:"detail-",
    
 
     endGenre:"",
@@ -188,7 +197,7 @@ export const ScanPrefix:ConfigPrefix={
     endArt:"",
     endStatus:"",
     endAlphaBet:"",
-    endViewmanga:"",
+    endViewmanga:"-chapter",
 
 
     startTag:"",
@@ -403,6 +412,180 @@ export const NovelPrefix:ConfigPrefix={
     endStatus:"",
     endAlphaBet:"",
     endViewmanga:"",
+
+    startTag:"",
+    endTag:"",
+
+    url_host:_host,
+    url_www_host:_hostwww,
+}
+//ru
+
+export const MangaRuPrefix:ConfigPrefix={
+    pageManga:`/${_Prefix_Root_Manga_Ru}`,
+    pageGenre:`/${_Prefix_Root_Manga_Ru}/genres`,
+    pageYear:`/${_Prefix_Root_Manga_Ru}/year`,
+    pageAuth:`/${_Prefix_Root_Manga_Ru}/auth`,
+    pageType:`/${_Prefix_Root_Manga_Ru}/type`,
+    pageScan:`/${_Prefix_Root_Manga_Ru}/scan`,
+    pageArt:`/${_Prefix_Root_Manga_Ru}/art`,
+    pageStatus:`/${_Prefix_Root_Manga_Ru}/status`,
+    pageViewManga:`/${_Prefix_Root_Manga_Ru}`,
+    pageAlphaBet:`/${_Prefix_Root_Manga_Ru}/a-z`,
+    pageTag:`/${_Prefix_Root_Manga_Ru}/tags`,
+
+    startGenre:"",
+    startYear:"",
+    startAuth:"",
+    startManga:"",
+    startType:"",
+    startScan:"",
+    startArt:"",
+    startStatus:"",
+    startAlphaBet:"",
+    startViewmanga:"chapter-",
+   
+
+    endGenre:"",
+    endYear:"",
+    endAuth:"",
+    endManga:"",
+    endType:"",
+    endScan:"",
+    endArt:"",
+    endStatus:"",
+    endAlphaBet:"",
+    endViewmanga:"",
+
+
+    startTag:"",
+    endTag:"",
+
+    url_host:_host,
+    url_www_host:_hostwww,
+}
+export const AdultRuPrefix:ConfigPrefix={
+    pageManga:`/${_Prefix_Root_Adult_Ru}`,
+    pageGenre:`/${_Prefix_Root_Adult_Ru}/genres`,
+    pageYear:`/${_Prefix_Root_Adult_Ru}/year`,
+    pageAuth:`/${_Prefix_Root_Adult_Ru}/auth`,
+    pageType:`/${_Prefix_Root_Adult_Ru}/type`,
+    pageScan:`/${_Prefix_Root_Adult_Ru}/scan`,
+    pageArt:`/${_Prefix_Root_Adult_Ru}/art`,
+    pageStatus:`/${_Prefix_Root_Adult_Ru}/status`,
+    pageViewManga:`/${_Prefix_Root_Adult_Ru}`,
+    pageAlphaBet:`/${_Prefix_Root_Adult_Ru}/a-z`,
+    pageTag:`/${_Prefix_Root_Adult_Ru}/tags`,
+
+    startGenre:"",
+    startYear:"",
+    startAuth:"",
+    startManga:"",
+    startType:"",
+    startScan:"",
+    startArt:"",
+    startStatus:"",
+    startAlphaBet:"",
+    startViewmanga:"chapter-",
+   
+
+    endGenre:"",
+    endYear:"",
+    endAuth:"",
+    endManga:"",
+    endType:"",
+    endScan:"",
+    endArt:"",
+    endStatus:"",
+    endAlphaBet:"",
+    endViewmanga:"",
+
+
+    startTag:"",
+    endTag:"",
+
+    url_host:_host,
+    url_www_host:_hostwww,
+}
+export const VideoRuPrefix:ConfigPrefix={
+    pageManga:`/${_Prefix_Root_Video_Ru}`,
+    pageGenre:`/${_Prefix_Root_Video_Ru}/genres`,
+    pageYear:`/${_Prefix_Root_Video_Ru}/year`,
+    pageAuth:`/${_Prefix_Root_Video_Ru}/auth`,
+    pageType:`/${_Prefix_Root_Video_Ru}/type`,
+    pageScan:`/${_Prefix_Root_Video_Ru}/scan`,
+    pageArt:`/${_Prefix_Root_Video_Ru}/art`,
+    pageStatus:`/${_Prefix_Root_Video_Ru}/status`,
+    pageViewManga:`/${_Prefix_Root_Video_Ru}`,
+    pageAlphaBet:`/${_Prefix_Root_Video_Ru}/a-z`,
+    pageTag:`/${_Prefix_Root_Video_Ru}/tags`,
+
+    startGenre:"",
+    startYear:"",
+    startAuth:"",
+    startManga:"",
+    startType:"",
+    startScan:"",
+    startArt:"",
+    startStatus:"",
+    startAlphaBet:"",
+    startViewmanga:"esp-",
+   
+
+    endGenre:"",
+    endYear:"",
+    endAuth:"",
+    endManga:"",
+    endType:"",
+    endScan:"",
+    endArt:"",
+    endStatus:"",
+    endAlphaBet:"",
+    endViewmanga:"",
+
+
+    startTag:"",
+    endTag:"",
+
+    url_host:_host,
+    url_www_host:_hostwww,
+}
+export const YaoiRuPrefix:ConfigPrefix={
+    pageManga:`/${_Prefix_Root_Yaoi_Ru}`,
+    pageGenre:`/${_Prefix_Root_Yaoi_Ru}/genres`,
+    pageYear:`/${_Prefix_Root_Yaoi_Ru}/year`,
+    pageAuth:`/${_Prefix_Root_Yaoi_Ru}/auth`,
+    pageType:`/${_Prefix_Root_Yaoi_Ru}/type`,
+    pageScan:`/${_Prefix_Root_Yaoi_Ru}/scan`,
+    pageArt:`/${_Prefix_Root_Yaoi_Ru}/art`,
+    pageStatus:`/${_Prefix_Root_Yaoi_Ru}/status`,
+    pageViewManga:`/${_Prefix_Root_Yaoi_Ru}`,
+    pageAlphaBet:`/${_Prefix_Root_Yaoi_Ru}/a-z`,
+    pageTag:`/${_Prefix_Root_Yaoi_Ru}/tags`,
+
+    startGenre:"",
+    startYear:"",
+    startAuth:"",
+    startManga:"",
+    startType:"",
+    startScan:"",
+    startArt:"",
+    startStatus:"",
+    startAlphaBet:"",
+    startViewmanga:"ch-",
+   
+
+    endGenre:"",
+    endYear:"",
+    endAuth:"",
+    endManga:"",
+    endType:"",
+    endScan:"",
+    endArt:"",
+    endStatus:"",
+    endAlphaBet:"",
+    endViewmanga:"",
+
 
     startTag:"",
     endTag:"",

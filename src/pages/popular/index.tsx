@@ -5,8 +5,8 @@ import { Metadata } from "next";
 import PageMangaList from "@/components/groupPage/mangaList";
 import { SelectMangaTypeByPage } from "@/constants/configBase";
 import PopupHome from "@/components/homePage/popupHome";
-import AdsTop from "@/components/ads/ads_top_body";
-import AdsDetail from "@/components/ads/ads_detail";
+import AdsTop from "@/ads/ads_top_body";
+import AdsDetail from "@/ads/ads_detail";
 
 export const metadata: Metadata = {
   title: "Popular Page",

@@ -15,7 +15,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { useEffect, useRef, useState } from 'react';
 import { SelectMangaTypeByPage } from '@/constants/configBase';
 import FotterPage from '@/ui/footer';
-import AdsTemplate from '@/components/ads/ads_template';
+import AdsTemplate from '@/ads/ads_template';
 import { ArrowUpCircleIcon } from '@heroicons/react/20/solid';
 const queryClient = new QueryClient();
 

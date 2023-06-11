@@ -1,5 +1,5 @@
-import AdsDetail from "@/components/ads/ads_detail";
-import AdsTop from "@/components/ads/ads_top_body";
+import AdsDetail from "@/ads/ads_detail";
+import AdsTop from "@/ads/ads_top_body";
 import LastRelease from "@/components/latestReleases/lastUpdate";
 import PopupRelease from "@/components/latestReleases/popupRelease";
 import { GlobalNav } from "@/ui/global-nav";

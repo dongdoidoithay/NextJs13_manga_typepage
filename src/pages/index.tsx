@@ -5,8 +5,8 @@ import PopupHome from "@/components/homePage/popupHome";
 import LastUpdateHome from "@/components/homePage/lastUpdate";
 import TopComment from '@/components/homePage/topComments';
 import HistoryHome from '@/components/homePage/historyHome';
-import AdsTop from '@/components/ads/ads_top_body';
-import AdsDetail from '@/components/ads/ads_detail';
+import AdsTop from '@/ads/ads_top_body';
+import AdsDetail from '@/ads/ads_detail';
 
 
 

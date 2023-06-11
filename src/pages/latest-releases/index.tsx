@@ -1,9 +1,9 @@
 import LastRelease from "@/components/latestReleases/lastUpdate";
 import PopupRelease from "@/components/latestReleases/popupRelease";
 import { GlobalNav } from "@/ui/global-nav";
-import AdsDetail from "@/components/ads/ads_detail";
-import AdsTop from "@/components/ads/ads_top_body";
-import AdsViews from "@/components/ads/ads_view";
+import AdsDetail from "@/ads/ads_detail";
+import AdsTop from "@/ads/ads_top_body";
+import AdsViews from "@/ads/ads_view";
 import baseSeo from "@/constants/baseSeo";
 import { Metadata } from "next";
 export const metadata: Metadata = {

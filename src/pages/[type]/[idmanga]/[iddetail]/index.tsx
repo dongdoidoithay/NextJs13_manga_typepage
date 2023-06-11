@@ -1,5 +1,5 @@
 
-import AdsTop from "@/components/ads/ads_top_body";
+import AdsTop from "@/ads/ads_top_body";
 import InfoViewManga from "@/components/mangaview/infoView";
 import InfoViewNovels from "@/components/novelview/infoView";
 import { FetchApi } from "@/constants/FetchApi";

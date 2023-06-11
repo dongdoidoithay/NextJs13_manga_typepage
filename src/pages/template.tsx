@@ -8,8 +8,8 @@ import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ArrowUpCircleIcon } from "@heroicons/react/20/solid";
 import FotterPage from "@/ui/footer";
-import AdsTemplate from "@/components/ads/ads_template";
-import AdsTop from "@/components/ads/ads_top_body";
+import AdsTemplate from "@/ads/ads_template";
+import AdsTop from "@/ads/ads_top_body";
 const queryClient = new QueryClient();
 
 

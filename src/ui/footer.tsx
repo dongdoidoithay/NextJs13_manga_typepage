@@ -1,4 +1,4 @@
-import AdsFooter from "@/components/ads/ads_footer";
+import AdsFooter from "@/ads/ads_footer";
 import { FetchApi } from "@/constants/FetchApi";
 import {
   MangaLang,
@@ -115,7 +115,7 @@ const FotterPage = () => {
       <div className="w-full h-80 pl-0  lg:pl-56 mt-14 bottom-0 ">
         <div id="heder" className="h-7 rounded bg-slate-700/70 align-middle justify-center ">
           <ul className="flex flex-row gap-3 align-middle justify-center items-center">
-            <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/server-sitemap.xml`}>SiteMap</Link></li>
+            <li ><Link title="Site map " href={`${config.configPrefix.url_host}/server-sitemap.xml`}>SiteMap</Link></li>
             <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/sitemap.html`}>Google SiteMap</Link></li>
             <li ><Link title="Site map " href={`${config.configPrefix.url_host}/api/urllist.txt`}>Bing SiteMap</Link></li>
           </ul>

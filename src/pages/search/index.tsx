@@ -6,13 +6,12 @@ import { Boundary } from "@/ui/boundary";
 import { GlobalNav } from "@/ui/global-nav";
 import getDate from "@/utils/caldate";
 import { ChevronLeftIcon, ChevronRightIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { useQuery } from "react-query";
-import AdsTop from "@/components/ads/ads_top_body";
-import AdsDetail from "@/components/ads/ads_detail";
-import baseSeo from "@/constants/baseSeo";
-
+import AdsTop from "@/ads/ads_top_body";
+import AdsDetail from "@/ads/ads_detail";
+import { useRouter } from 'next/router'
+import { NextSeo } from "next-seo";
 const FetchData = async (config: MangaLang, keysearch: string, pageParam: number) => {
   if(keysearch==null || keysearch==''){
     return null;
@@ -20,11 +19,8 @@ const FetchData = async (config: MangaLang, keysearch: string, pageParam: number
    // console.log("call API:",{keysearch,pageParam,_test});
   return await FetchApi(config.apiPath + config.endPointPath.mangaListSearch + keysearch + '/' + pageParam);
 }
-export default function SearchPage({
-  searchParams
-}: {
-  searchParams: { q: string };
-}) {
+export default function SearchPage() {
+  const router = useRouter()
 
   const _cons=SelectMangaTypeByPage('');
   const[config,setConfig]=useState(_cons);
@@ -61,7 +57,8 @@ export default function SearchPage({
     setConfig(SelectMangaTypeByPage(''));
     setSelectedOption(config?.typeName);
     inputRef.current?.focus();
-    setValueFind(searchParams.q);
+
+    setValueFind(router.query.q?.toString());
   }, []);
 
   //FN
@@ -250,6 +247,49 @@ return (
 }
   return (
     <>
+    <NextSeo
+        title={`${config.configSetting.sb_seo_page_group_title
+          .replace(/{domain}/g, config.configSetting.lbl_domain_name)
+          .replace(/{groupname}/g, config.configSetting.lbl_status)
+          .replace(/{key}/g, router.query.q?.toString()||'')
+          .replace(/{page}/g, `${router.query.page}`)
+          }`
+        }
+        description={`${config.configSetting.sb_seo_page_group_desc
+          .replace(/{domain}/g, config.configSetting.lbl_domain_name)
+          .replace(/{groupname}/g, "Search Key ")
+          .replace(/{key}/g, router.query.q?.toString()||"")
+          .replace(/{page}/g, `${router.query.page}`)}`
+        }
+        canonical={`${config.configPrefix.url_host}${router.asPath}`}
+        openGraph={{
+          url: `${config.configPrefix.url_host}${router.asPath}`,
+          title: `${"Search Key "} ${router.query.q?.toString()}`,
+          description: `${config.configSetting.sb_seo_page_group_desc
+            .replace(/{domain}/g, config.configSetting.lbl_domain_name)
+            .replace(/{groupname}/g, "Search Key ")
+            .replace(/{key}/g, router.query.q?.toString()||"")
+            .replace(/{page}/g, `${router.query.page}`)}`,
+          site_name: `${config.configSetting.lbl_domain_Page}`,
+        }
+        }
+        additionalMetaTags={[{
+          property: 'keywords',
+          content: config.configSetting.sb_seo_page_group_key
+            .replace(/{domain}/g, config.configSetting.lbl_domain_name)
+            .replace(/{groupname}/g, config.configSetting.lbl_genres)
+            .replace(/{key}/g, router.query.q?.toString()||"")
+            .replace(/{page}/g, `${router.query.page}`)
+        }]}
+        additionalLinkTags={[{
+          rel: "next",
+          href: `${config.configPrefix.url_host}${config.configPrefix.pageAlphaBet}/${router.query.q?.toString()||""}?page=${page+1}`,
+        }, {
+          rel: "prev",
+          href: `${config.configPrefix.url_host}${config.configPrefix.pageAlphaBet}/${router.query.q?.toString()||""}?page=${page-1}`,
+        }
+        ]}
+      />
       <GlobalNav />
       <div ref={sectionRef} className="lg:pl-60  bg-slate-900/70 border border-slate-700">
         <main className="px-2">

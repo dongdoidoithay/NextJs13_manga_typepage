@@ -11,9 +11,10 @@ import InfoActionViewSkeletion from "./infoActionViewSkeletion";
 import ContenViewSkeletion from "./contenViewSkeletion";
 import DisqusComments from "../mangaInfo/disquscomment";
 import InfoActionViewBt from "./infoActionViewBt";
-import AdsDetail from "../ads/ads_detail";
+import AdsDetail from "../../ads/ads_detail";
 
 import SeoHead from "../mangaInfo/seoHead";
+import { NextSeo } from "next-seo";
 
 const InfoViewManga = ({ config, data ,loading}: { config: MangaLang, data: any,loading:boolean }) => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -141,8 +142,45 @@ const InfoViewManga = ({ config, data ,loading}: { config: MangaLang, data: any,
     //console.log("data view",{data,listImg});
     return (
         <>
-             <SeoHead title={title} desc={des_meta} image={imageurl} key_word={key_word} locale={null} url={url}  /> 
-    
+             {data &&  <NextSeo
+            title={title}
+            additionalMetaTags={[{
+                property: 'keywords',
+                content: key_word
+            }]}
+            description={des_meta}
+            openGraph={{
+                title: title,
+                description: des_meta,
+                url: url,
+                type: 'article',
+                article: {
+                    publishedTime: new Date().toISOString(),
+                    modifiedTime: new Date().toISOString(),
+                    expirationTime: new Date().toISOString(),
+                    section: "News",
+                    tags: [key_word],
+                },
+                images: [
+                    {
+                        url: data?.manga?.image,
+                        alt: title,
+                    },
+                ],
+            }
+            }
+            additionalLinkTags={[{
+                rel: "alternate",
+                href: `${config.configPrefix.url_host}/api${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${data.idDoc}${config.configPrefix.endManga}/${config.configPrefix.startViewmanga}${data.idDetail}${config.configPrefix.endViewmanga}/feed`,
+                type: "application/rss+xml"
+            },
+            {
+                rel: "alternate",
+                href: `${config.configPrefix.url_host}/api${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${data.idDoc}${config.configPrefix.endManga}/${config.configPrefix.startViewmanga}${data.idDetail}${config.configPrefix.endViewmanga}/rss.xml`,
+                type: "application/rss+xml"
+            }
+            ]}
+        />}
             { loading &&<InfoActionViewSkeletion/>}
             {data && <InfoActionView  config={config} viewMode={viewMode}  data={data} fnChangeVidewMode={fnChangeVidewMode} listImg={listImg} CurrentImage={CurrentImage} SetCurrentImage={SetCurrentImage}  ImageSelect={ImageSelect} SetImageSelect={SetImageSelect} prev_img={prev_img} next_img={next_img}/>}
             <div  ref={sectionRef} id="read-view" className="mt-2 mx-1 flex flex-col items-center">
@@ -157,7 +195,7 @@ const InfoViewManga = ({ config, data ,loading}: { config: MangaLang, data: any,
             <h3 className="font-semibold text-white/80 first-letter:uppercase before:content-['_↗']">
                 {config.configSetting.lbl_inf_comment}
             </h3>
-                <DisqusComments image={data.manga.image} type={config.typeManga} url={`${config.configPrefix.url_host}${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${data.idDoc}${config.configPrefix.endManga}`} id={data.idDoc} title={data.manga.name} />
+                <DisqusComments image={data?.manga?.image} type={config.typeManga} url={`${config.configPrefix.url_host}${config.configPrefix.pageViewManga}/${config.configPrefix.startManga}${data.idDoc}${config.configPrefix.endManga}`} id={data.idDoc} title={data.manga.name} />
             </div>
             } 
         </>

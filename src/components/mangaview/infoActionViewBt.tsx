@@ -3,7 +3,6 @@ import React, { } from "react";
 import { MangaLang } from "@/constants/configBase";
 
 import { BookOpenIcon, ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 
 
 const InfoActionViewBt = ({ config, data, fnChangeVidewMode, listImg, CurrentImage, SetCurrentImage, ImageSelect, SetImageSelect, prev_img, next_img, viewMode }:

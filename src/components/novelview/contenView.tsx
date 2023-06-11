@@ -2,8 +2,8 @@ import ImageLoading from '@/ui/ImageLoading';
 import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import AdsViews from '../ads/ads_view';
-import AdsDetail from '../ads/ads_detail';
+import AdsViews from '../../ads/ads_view';
+import AdsDetail from '../../ads/ads_detail';
 import { getStorage, setStorage } from '@/utils/localFx';
 
 
