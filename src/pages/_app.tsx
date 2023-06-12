@@ -8,7 +8,7 @@ import { NextSeo } from 'next-seo';
 // import your default seo configuration
 import SEO from '../constants/seoConfig';
 import NextNprogress from 'nextjs-progressbar';
-import {sb_seo_page_default_key} from '../constants/configSettingBase';
+import {_sb_seo_page_default_key} from '../constants/configSettingBase';
 import {_hostwww} from '../constants/configPrefixBase';
 import { ToastContainer } from 'react-toastify';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <NextSeo
           additionalMetaTags={[{
             property: 'keywords',
-            content: sb_seo_page_default_key
+            content: _sb_seo_page_default_key
           }]}
           additionalLinkTags={[{
             rel: "alternate",

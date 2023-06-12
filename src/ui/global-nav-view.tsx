@@ -1,5 +1,6 @@
 
 
+import Link from "next/link";
 import {
   Bars4Icon,
   BoltIcon,
@@ -17,9 +18,6 @@ import { SubnNav } from "./sub-nav";
 import clsx from "clsx";
 import { _hostwww } from "@/constants/configPrefixBase";
 import { MangaSource, MenuLeft, SelectMangaTypeByPage } from "@/constants/configBase";
-import Link from "next/link";
-import { useRouter } from 'next/router'
-
 
 export function GlobalNavView() {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,6 +93,8 @@ export function GlobalNavView() {
     </>
   );
 }
+
+import { useRouter } from 'next/router'
 function NavItem({
   item,
   idx
@@ -102,10 +102,9 @@ function NavItem({
   item: MangaSource,
   idx: number
 }) {
-  //const segment = usePathname();
-  //const isActive = segment.includes("/" + item.value);
   const router = useRouter()
-  const isActive = router.asPath.includes("/" + item.value);
+  const segment = router.asPath;
+  const isActive = segment.includes("/" + item.value);
   let _link = `${_hostwww}/${item.value}`;
 
   let _target: any = '_self';

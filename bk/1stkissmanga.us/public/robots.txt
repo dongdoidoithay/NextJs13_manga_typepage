@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.1stkissmanga.us/server-sitemap.xml 
+Sitemap: https://www.1stkissmanga.us/sitemap-index.xml 
+Sitemap: https://www.1stkissmanga.us/BingSiteAuth.xml
