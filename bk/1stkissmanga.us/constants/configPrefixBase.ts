@@ -12,6 +12,7 @@ export const _Prefix_Root_Adult='adult-manga';
 export const _Prefix_Root_Dc='comic';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
+export const _Prefix_Root_Anime='anime';
 
 export const _Prefix_Type_Adult_Br='adult-br';
 export const _Prefix_Type_Manga_Br='manga-br';
@@ -21,7 +22,7 @@ export const _Prefix_Type_Adult='adult';
 export const _Prefix_Type_Dc='comic';
 export const _Prefix_Type_Novel='novel';
 export const _Prefix_Type_NewsDc='blog';
-
+export const _Prefix_Type_Anime='anime';
 
 export type ConfigPrefix ={
     pageManga:string;

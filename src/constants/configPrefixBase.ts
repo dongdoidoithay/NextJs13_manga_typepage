@@ -1,16 +1,15 @@
-/* const _host="http://localhost:4001";
-const _hostwww="http://www.localhost:4001";   */
-export const _host="https://www.unionmanga.lol";
-export const _hostwww="https://www.unionmanga.lol";
-
+/* const _host="http://localhost:5046";
+const _hostwww="http://www.localhost:5046";  */
+export const _host="https://www.1stkissmanga.us";
+export const _hostwww="https://www.1stkissmanga.us";  
 
 
 export const _Prefix_Root_Manga_Br='manga-br';
 export const _Prefix_Root_Adult_Br='adult-br';
-export const _Prefix_Root_Scan='info';
-export const _Prefix_Root_Raw='raw';
-export const _Prefix_Root_Adult='adult';
-export const _Prefix_Root_Dc='comics';
+export const _Prefix_Root_Scan='scan-manga';
+export const _Prefix_Root_Raw='raw-manga';
+export const _Prefix_Root_Adult='adult-manga';
+export const _Prefix_Root_Dc='comic';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
 export const _Prefix_Root_Anime='anime';
@@ -67,7 +66,6 @@ export type ConfigPrefix ={
     url_www_host:string;
 
 } 
-
 export const MangaBrPrefix:ConfigPrefix={
     pageManga:`/${_Prefix_Root_Manga_Br}`,
     pageGenre:`/${_Prefix_Root_Manga_Br}/genres`,
@@ -156,6 +154,7 @@ export const AdultBrPrefix:ConfigPrefix={
     url_www_host:_hostwww,
 }
 
+
 export const ScanPrefix:ConfigPrefix={
     pageManga:`/${_Prefix_Root_Scan}`,
     pageGenre:`/${_Prefix_Root_Scan}/genres`,
@@ -172,13 +171,13 @@ export const ScanPrefix:ConfigPrefix={
     startGenre:"",
     startYear:"",
     startAuth:"",
-    startManga:"",
+    startManga:"view-",
     startType:"",
     startScan:"",
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"detail-",
+    startViewmanga:"ch-",
    
 
     endGenre:"",
@@ -190,7 +189,7 @@ export const ScanPrefix:ConfigPrefix={
     endArt:"",
     endStatus:"",
     endAlphaBet:"",
-    endViewmanga:"-chapter",
+    endViewmanga:"",
 
 
     startTag:"",
@@ -218,13 +217,13 @@ export const RawPrefix:ConfigPrefix={
     startGenre:"",
     startYear:"",
     startAuth:"",
-    startManga:"",
+    startManga:"view-",
     startType:"",
     startScan:"",
     startArt:"",
-    startStatus:"",
+    startStatus:"1st-",
     startAlphaBet:"",
-    startViewmanga:"chapter-",
+    startViewmanga:"ch-",
 
     endGenre:"",
     endYear:"",
@@ -260,13 +259,13 @@ export const AdultPrefix:ConfigPrefix={
     startGenre:"",
     startYear:"",
     startAuth:"",
-    startManga:"",
-    startType:"",
+    startManga:"dt-",
+    startType:"type-",
     startScan:"",
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"chapter-",
+    startViewmanga:"ch-",
 
     endGenre:"",
     endYear:"",
@@ -308,7 +307,7 @@ export const DcPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"issue-",
+    startViewmanga:"iss-",
 
     endGenre:"",
     endYear:"",
@@ -327,7 +326,6 @@ export const DcPrefix:ConfigPrefix={
     url_host:_host,
     url_www_host:_hostwww,
 }
-
 export const NewsDcPrefix:ConfigPrefix={
     pageManga:`/${_Prefix_Root_NewsDc}`,
     pageGenre:`/${_Prefix_Root_NewsDc}/cat`,
@@ -394,49 +392,6 @@ export const NovelPrefix:ConfigPrefix={
     startStatus:"",
     startAlphaBet:"",
     startViewmanga:"volume-",
-
-    endGenre:"",
-    endYear:"",
-    endAuth:"",
-    endManga:"",
-    endType:"",
-    endScan:"",
-    endArt:"",
-    endStatus:"",
-    endAlphaBet:"",
-    endViewmanga:"",
-
-    startTag:"",
-    endTag:"",
-
-    url_host:_host,
-    url_www_host:_hostwww,
-}
-
-export const AnimePrefix:ConfigPrefix={
-    pageManga:`/${_Prefix_Root_Anime}`,
-    pageGenre:`/${_Prefix_Root_Anime}/genres`,
-    pageYear:`/${_Prefix_Root_Anime}/year`,
-    pageAuth:`/${_Prefix_Root_Anime}/auth`,
-    pageType:`/${_Prefix_Root_Anime}/type`,
-    pageScan:`/${_Prefix_Root_Anime}/scan`,
-    pageArt:`/${_Prefix_Root_Anime}/art`,
-    pageStatus:`/${_Prefix_Root_Anime}/status`,
-    pageViewManga:`/${_Prefix_Root_Anime}`,
-    pageAlphaBet:`/${_Prefix_Root_Anime}/a-z`,
-    pageTag:`/${_Prefix_Root_Anime}/tags`,
-
-
-    startGenre:"",
-    startYear:"",
-    startAuth:"",
-    startManga:"",
-    startType:"",
-    startScan:"",
-    startArt:"",
-    startStatus:"",
-    startAlphaBet:"",
-    startViewmanga:"ep-",
 
     endGenre:"",
     endYear:"",

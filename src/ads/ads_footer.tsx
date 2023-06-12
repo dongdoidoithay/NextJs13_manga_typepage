@@ -7,7 +7,7 @@ const AdsFooter = () => {
     <>
 
       <div className="text-center">
-        <iframe className="inline" src="//marathonpleadparachute.com/watchnew?key=ab998873a0cceeda563938144affa802" height="50" width="320" frameBorder={"0"} scrolling="no"></iframe>
+        <iframe className="inline" src="//marathonpleadparachute.com/watchnew?key=fa60b86e8ca992b7c64f36d4ac90bac9" height="50" width="320" frameBorder={"0"} scrolling="no"></iframe>
       </div>
 
     </>

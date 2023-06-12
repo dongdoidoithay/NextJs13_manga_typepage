@@ -1,52 +1,49 @@
 
-const _lbl_Name_Page=`<span class="text-sky-400 font-bold">1ST</span><span class="text-orange-600 font-bold">💞KISS</span>`;
-const _sb_seo_default_image="https://pandamanga.xyz/bg.jpg";
-const _lbl_domain_Page="pandamanga.xyz";
-const _lbl_domain_name="pandamanga.xyz";
+export const _lbl_Name_Page=`<span class="text-sky-400 font-bold">1ST</span><span class="text-orange-600 font-bold">💞KISS</span>`;
+export const _sb_seo_default_image="https://pandamanga.xyz/bg.jpg";
+export const _lbl_domain_Page="pandamanga.xyz";
+export const _lbl_domain_name="pandamanga.xyz";
 
-const _sb_seo_df_title= "Read Manga KISS English |Raw|Scan|Adult|Comics For Free 💯 1stkissmanga.us";
-const _sb_seo_page_default_key= "1stkissmanga.us,kiss Manga, Manga kiss, Manga, Read Manga, Manga Online, Read Manga Free, Manga Scans, 1stkissmanga.us,manga raw,read manga,read manga online,manga online,manga 18+, manga yaoi, manga Adult,Claymore manga";
-const _sb_seo_page_default_desc= "💯 Love manga in site 1stkissmanga.us.💞 You can read raw - scan - adult  manga. manhwa, manhua completely free with english interface and many more...";
+export const _sb_seo_df_title= "Read Manga KISS English |Raw|Scan|Adult|Comics For Free 💯 1stkissmanga.us";
+export const _sb_seo_page_default_key= "1stkissmanga.us,kiss Manga, Manga kiss, Manga, Read Manga, Manga Online, Read Manga Free, Manga Scans, 1stkissmanga.us,manga raw,read manga,read manga online,manga online,manga 18+, manga yaoi, manga Adult,Claymore manga";
+export const _sb_seo_page_default_desc= "💯 Love manga in site 1stkissmanga.us.💞 You can read raw - scan - adult  manga. manhwa, manhua completely free with english interface and many more...";
 
-const _sb_seo_page_group_title= "Manga Browse by {groupname} | {key} {domain}";
-const _sb_seo_page_group_desc= "Read {groupname} by {key} 👻 Page {page} for {domain}";
-const _sb_seo_page_group_key= "{groupname} {key},{groupname} {key} Page {page},1stkissmanga.us,manga raw,read manga,read manga online,free online manga,Naruto manga";
+export const _sb_seo_page_group_title= "Manga Browse by {groupname} | {key} {domain}";
+export const _sb_seo_page_group_desc= "Read {groupname} by {key} 👻 Page {page} for {domain}";
+export const _sb_seo_page_group_key= "{groupname} {key},{groupname} {key} Page {page},1stkissmanga.us,manga raw,read manga,read manga online,free online manga,Naruto manga";
 
-const _info_name_manga_title="Manga {name} 🍀 {chapter} {domain} 🔶 {nameOther} new";
-const _info_name_manga= "Manga {name}";
-const _desc_info_manga= "Read manga {name} online 👻 Read the latest {nameOther}{chapter} of {name} {auth} at {domain},Read manga {nameOther} online ❇️. Support reading on mobile, tablet, PC.";
-const _keyword_info_manga= "{name},My Manga {name} {chapter}, Read {name} online, {name}{chapter} online, {name}{nameOther} series, {name} {chapter}, {name} {chapter} scans";
+export const _info_name_manga_title="Manga {name} 🍀 {chapter} {domain} 🔶 {nameOther} new";
+export const _info_name_manga= "Manga {name}";
+export const _desc_info_manga= "Read manga {name} online 👻 Read the latest {nameOther}{chapter} of {name} {auth} at {domain},Read manga {nameOther} online ❇️. Support reading on mobile, tablet, PC.";
+export const _keyword_info_manga= "{name},My Manga {name} {chapter}, Read {name} online, {name}{chapter} online, {name}{nameOther} series, {name} {chapter}, {name} {chapter} scans";
 
-const _view_name_chapter_title= "Read {name} Chapter {chapter} 🍀 {nameOther} {chapter} - {domain} ";
-const _view_name_chapter= "Read {name} {chapter} - {nameOther} Online for Free";
-const _desc_view_name_chapter= "Read {name} {chapter} online for free .You reading manga {name}[{nameOther}] {chapter} hot of {auth} at 👻 {domain}. ❇️ Support reading on mobile, tablet, PC.";
-const _keyword_view_name_chapter= "{name} {chapter}, {name} {chapter} of {auth}, Read {name}{nameOther} {chapter} online, {name}-{auth} {chapter} online For Free, {name}|{nameOther} {chapter} scans,{name} {chapter}-{nameOther}";
-const _tag_view_name_chapter= "read {name} Chapter {chapter}, comic {name} Chapter {chapter}, read {name} volume {chapter} online, {name} Chapter {chapter} high quality, {name} Chapter {chapter} manga scan";
-const _desc_view_chapter= "Read the latest Novel or Manga and Comic <b> {name} {chapter} </b> at <b> {namePage} </b>. Manga <b> {name} </b> is always updated at <b> {namePage} </b>. Dont forget to read the other manga updates. A list of manga collections <b> {namePage} </b> is in the Manga List menu. </p>";
-
-
+export const _view_name_chapter_title= "Read {name} Chapter {chapter} 🍀 {nameOther} {chapter} - {domain} ";
+export const _view_name_chapter= "Read {name} {chapter} - {nameOther} Online for Free";
+export const _desc_view_name_chapter= "Read {name} {chapter} online for free .You reading manga {name}[{nameOther}] {chapter} hot of {auth} at 👻 {domain}. ❇️ Support reading on mobile, tablet, PC.";
+export const _keyword_view_name_chapter= "{name} {chapter}, {name} {chapter} of {auth}, Read {name}{nameOther} {chapter} online, {name}-{auth} {chapter} online For Free, {name}|{nameOther} {chapter} scans,{name} {chapter}-{nameOther}";
+export const _tag_view_name_chapter= "read {name} Chapter {chapter}, comic {name} Chapter {chapter}, read {name} volume {chapter} online, {name} Chapter {chapter} high quality, {name} Chapter {chapter} manga scan";
+export const _desc_view_chapter= "Read the latest Novel or Manga and Comic <b> {name} {chapter} </b> at <b> {namePage} </b>. Manga <b> {name} </b> is always updated at <b> {namePage} </b>. Dont forget to read the other manga updates. A list of manga collections <b> {namePage} </b> is in the Manga List menu. </p>";
 
 //BR
-const _sb_seo_df_title_br= "🔱 Union Mangás Grátis Online - Raw |Translate| Comic | Novels - Blogs at 💯 ✅ pandamanga.xyz";
-const _sb_seo_page_default_key_br= "pandamanga.xyz,mangá union, 4koma, acao, adulto, artes marciais, aventura, comedia, criancas, culinaria, demonios, drama, ecchi, escolar, espaco, esportes, fantasia, ficcao, gender bender, harem";
-const _sb_seo_page_default_desc_br= "✅ Você pode ler quadrinhos online em português aqui.Mangás Raw,Adult,Translate,Novels,Comic .A história é atualizada diariamente e é um recurso conveniente para anunciar novas traduções - free daily updates 💯% official";
+export const _sb_seo_df_title_br= "🔱 Union Mangás Grátis Online - Raw |Translate| Comic | Novels - Blogs at 💯 ✅ pandamanga.xyz";
+export const _sb_seo_page_default_key_br= "pandamanga.xyz,mangá union, 4koma, acao, adulto, artes marciais, aventura, comedia, criancas, culinaria, demonios, drama, ecchi, escolar, espaco, esportes, fantasia, ficcao, gender bender, harem";
+export const _sb_seo_page_default_desc_br= "✅ Você pode ler quadrinhos online em português aqui.Mangás Raw,Adult,Translate,Novels,Comic .A história é atualizada diariamente e é um recurso conveniente para anunciar novas traduções - free daily updates 💯% official";
 
+export const _sb_seo_page_group_title_br= "Filtro de mangá por {groupname} | {key} {domain}";
+export const _sb_seo_page_group_desc_br= "Leia ✅ {groupname} por {key} 💯 Página {page} # {domain}";
+export const _sb_seo_page_group_key_br= "{groupname} {key},{groupname} {key} Page {page},,manga raw,read manga,View Comics Online,free online manga,Naruto manga";
 
-const _sb_seo_page_group_title_br= "Filtro de mangá por {groupname} | {key} {domain}";
-const _sb_seo_page_group_desc_br= "Leia ✅ {groupname} por {key} 💯 Página {page} # {domain}";
-const _sb_seo_page_group_key_br= "{groupname} {key},{groupname} {key} Page {page},,manga raw,read manga,View Comics Online,free online manga,Naruto manga";
+export const _info_name_manga_title_br="Mangá {name} Capítulos#{chapter} 💯 {domain} | {nameOther} ✅ Última atualização";
+export const _info_name_manga_br= "Mangás {name}";
+export const _desc_info_manga_br= "{name} Mangá 💯 Leia o último {nameOther}{chapter} de {name} {auth} em {domain},Leia mangá {nameOther} online ✅. Suporte a leitura no celular, tablet, PC.";
+export const _keyword_info_manga_br= "name}, {name} {chapter} mangá, Leia {name} online, {name}{chapter} online, {name}{nameOther} series, {name} {chapter}, {name} {chapter} scans";
 
-const _info_name_manga_title_br="Mangá {name} Capítulos#{chapter} 💯 {domain} | {nameOther} ✅ Última atualização";
-const _info_name_manga_br= "Mangás {name}";
-const _desc_info_manga_br= "{name} Mangá 💯 Leia o último {nameOther}{chapter} de {name} {auth} em {domain},Leia mangá {nameOther} online ✅. Suporte a leitura no celular, tablet, PC.";
-const _keyword_info_manga_br= "name}, {name} {chapter} mangá, Leia {name} online, {name}{chapter} online, {name}{nameOther} series, {name} {chapter}, {name} {chapter} scans";
-
-const _view_name_chapter_title_br= "Mangá {name} novo {chapter} 💯 {domain} ✅ {nameOther} - {chapter}";
-const _view_name_chapter_br= "Mangá {name} {chapter} | {nameOther} Online de graça";
-const _desc_view_name_chapter_br= "Mangá {name} {chapter} Online de graça ✅.Você está lendo mangá {name}[{nameOther}] {chapter} quente de {auth} em 💯 {domain}. ✅ Suporte a leitura no celular, tablet, PC.";
-const _keyword_view_name_chapter_br= "{name} {chapter}, {name} {chapter} de {auth}, Leia {name}{nameOther} {chapter} online, {name}-{auth} {chapter} online de graça, {name}|{nameOther } {chapter} scans,{name} {chapter} {nameOther}";
-const _tag_view_name_chapter_br= "leia mangá {name} Chapter {chapter}, comic {name} Chapter {chapter}, leia {name} Chapter {chapter} online, {name} Chapter {chapter} de alta qualidade, {name} Chapter {chapter} mangá scan";
-const _desc_view_chapter_br= "Leia o mangá mais recente <b> {name} {chapter} </b> em <b> {namePage} </b>. O mangá <b> {name} </b> é sempre atualizado em <b> {namePage} </b>. Não se esqueça de ler as outras atualizações do mangá. Uma lista de coleções de mangás <b> {namePage} </b> está no menu Manga List. </p>";
+export const _view_name_chapter_title_br= "Mangá {name} novo {chapter} 💯 {domain} ✅ {nameOther} - {chapter}";
+export const _view_name_chapter_br= "Mangá {name} {chapter} | {nameOther} Online de graça";
+export const _desc_view_name_chapter_br= "Mangá {name} {chapter} Online de graça ✅.Você está lendo mangá {name}[{nameOther}] {chapter} quente de {auth} em 💯 {domain}. ✅ Suporte a leitura no celular, tablet, PC.";
+export const _keyword_view_name_chapter_br= "{name} {chapter}, {name} {chapter} de {auth}, Leia {name}{nameOther} {chapter} online, {name}-{auth} {chapter} online de graça, {name}|{nameOther } {chapter} scans,{name} {chapter} {nameOther}";
+export const _tag_view_name_chapter_br= "leia mangá {name} Chapter {chapter}, comic {name} Chapter {chapter}, leia {name} Chapter {chapter} online, {name} Chapter {chapter} de alta qualidade, {name} Chapter {chapter} mangá scan";
+export const _desc_view_chapter_br= "Leia o mangá mais recente <b> {name} {chapter} </b> em <b> {namePage} </b>. O mangá <b> {name} </b> é sempre atualizado em <b> {namePage} </b>. Não se esqueça de ler as outras atualizações do mangá. Uma lista de coleções de mangás <b> {namePage} </b> está no menu Manga List. </p>";
 
 
 

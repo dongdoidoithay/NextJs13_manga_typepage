@@ -1,7 +1,6 @@
 import {
   AdultBrPrefix,
   AdultPrefix,
-  AnimePrefix,
   ConfigPrefix,
   DcPrefix,
   MangaBrPrefix,
@@ -11,7 +10,6 @@ import {
   ScanPrefix,
   _Prefix_Root_Adult,
   _Prefix_Root_Adult_Br,
-  _Prefix_Root_Anime,
   _Prefix_Root_Dc,
   _Prefix_Root_Manga_Br,
   _Prefix_Root_NewsDc,
@@ -20,7 +18,6 @@ import {
   _Prefix_Root_Scan,
   _Prefix_Type_Adult,
   _Prefix_Type_Adult_Br,
-  _Prefix_Type_Anime,
   _Prefix_Type_Dc,
   _Prefix_Type_Manga_Br,
   _Prefix_Type_NewsDc,
@@ -32,7 +29,6 @@ import {
 import {
   AdultBrSetting,
   AdultSetting,
-  AnimeSetting,
   ConfigSetting,
   DcSetting,
   MangaBrSetting,
@@ -75,11 +71,6 @@ export const MenuLeft: MangaSource[] = [
     value: 'manga-list',
     icon:"mangalist",
   }, 
-  {
-    lable: "Watch Anime",
-    value: _Prefix_Root_Anime,
-    icon:"cate"
-  },
  /*  {
     lable: "Advanced Search",
     value: 'advanced-search',
@@ -116,17 +107,16 @@ export const MenuLeft: MangaSource[] = [
     value: _Prefix_Root_Adult,
     icon:"cate"
   },
-  {
+  /* {
     lable: "Novel Light",
     value: _Prefix_Root_Novel,
     icon:"cate"
-  },
+  }, */
   {
     lable: "Mangás português",
     value: _Prefix_Root_Manga_Br,
     icon:"cate"
   },
-  
 /*   {
     lable: "Mangás adulto",
     value: _Prefix_Root_Adult_Br,
@@ -158,17 +148,13 @@ export const ActMangaSource: MangaSource[] = [
     lable: "Manga Adult",
     value: _Prefix_Root_Adult,
   },
- {
+/*   {
     lable: "Novel Light",
     value: _Prefix_Root_Novel,
-  }, 
+  }, */
   {
     lable: "Português",
     value: _Prefix_Root_Manga_Br,
-  },
-  {
-    lable: "Anime",
-    value: _Prefix_Root_Anime,
   },
 /*   {
     lable: "Mangás adulto",
@@ -198,17 +184,13 @@ export const ActSourceList: MangaSource[] = [
     lable: "Manga Adult",
     value: _Prefix_Root_Adult,
   },
-  {
+/*   {
     lable: "Novel Light",
     value: _Prefix_Root_Novel,
-  },
+  }, */
   {
     lable: "Mangás português",
     value: _Prefix_Root_Manga_Br,
-  },
-  {
-    lable: "Anime",
-    value: _Prefix_Root_Anime,
   },
 /*   {
     lable: "Mangás adulto",
@@ -363,18 +345,6 @@ const NewsDc: MangaLang = {
   listSource: ActSourceList
 };
 
-const Anime: MangaLang = {
-  typeName: _Prefix_Root_Anime,
-  typeManga: _Prefix_Type_Anime,
-  apiPath: apiRootPath + "/en/anime",
-  endPointPath: EndpointSetting,
-  localKey: LocalKey,
-
-  configPrefix: AnimePrefix,
-  activeSource: ActMangaSource,
-  configSetting: AnimeSetting,
-  listSource: ActSourceList
-};
 /*http://localhost:5110/manga/my-body-is-a-sword  --> type =manga*/
 export const SelectMangaTypeByPage = (type: string): MangaLang => {
   let selectType = null;
@@ -403,11 +373,8 @@ export const SelectMangaTypeByPage = (type: string): MangaLang => {
     case _Prefix_Root_NewsDc:
       selectType = NewsDc;
       break;
-      case _Prefix_Root_Anime:
-        selectType = Anime;
-        break;
     default:
-      selectType = MangaBr;
+      selectType = MangaScan;
       break;
   }
   return selectType;
