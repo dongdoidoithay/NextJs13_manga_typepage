@@ -1,19 +1,20 @@
-/* const _host="http://localhost:4001";
-const _hostwww="http://www.localhost:4001";   */
-export const _host="https://www.mangareborn.xyz";
-export  const _hostwww="https://www.mangareborn.xyz";
+/* export  const _host="http://localhost:5213";
+export const _hostwww="http://www.localhost:5213"; */
+export const _host="https://www.mangaread.lol";
+export const _hostwww="https://www.mangaread.lol"; 
 
 
 
-export const _Prefix_Root_Manga_Br='manga-br';
-export const _Prefix_Root_Adult_Br='adult-br';
-export const _Prefix_Root_Scan='info';
+export const _Prefix_Root_Manga_Br='mangas';
+export const _Prefix_Root_Adult_Br='adult';
+export const _Prefix_Root_Scan='manga';
 export const _Prefix_Root_Raw='raw';
-export const _Prefix_Root_Adult='adult';
+export const _Prefix_Root_Adult='manhwa';
 export const _Prefix_Root_Dc='comics';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
 export const _Prefix_Root_Anime='anime';
+
 
 export const _Prefix_Type_Adult_Br='adult-br';
 export const _Prefix_Type_Manga_Br='manga-br';
@@ -178,7 +179,7 @@ export const ScanPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"detail-",
+    startViewmanga:"chapter-",
    
 
     endGenre:"",
@@ -190,7 +191,7 @@ export const ScanPrefix:ConfigPrefix={
     endArt:"",
     endStatus:"",
     endAlphaBet:"",
-    endViewmanga:"-chapter",
+    endViewmanga:"",
 
 
     startTag:"",

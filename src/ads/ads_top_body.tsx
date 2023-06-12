@@ -7,7 +7,7 @@ const AdsTop = () => {
 
     {/* adsterra.com */}
     <div className="text-center">
-      <iframe className="inline" src="//marathonpleadparachute.com/watchnew?key=a4c4f15574d5312daa9a4ee5a0e97da4" height="250" width="300" frameBorder={"0"} scrolling="no"></iframe>
+      <iframe className="inline" src="//marathonpleadparachute.com/watchnew?key=76cf3ff1ddbc68b86567fbb6eaaa6ed9" height="250" width="300" frameBorder={"0"} scrolling="no"></iframe>
     </div>
 
   </>)

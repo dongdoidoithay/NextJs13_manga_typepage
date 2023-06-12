@@ -1,10 +1,11 @@
-import ImageLoading from '@/ui/ImageLoading';
-import Link from 'next/link';
+
 import React, { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import AdsViews from '../../ads/ads_view';
-import AdsDetail from '../../ads/ads_detail';
+
 import { getStorage, setStorage } from '@/utils/localFx';
+import { PauseIcon, PlayIcon, PlayPauseIcon } from '@heroicons/react/20/solid';
+import clsx from 'clsx';
+import AdsViews from '@/ads/ads_view';
 
 
 const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, fontFamilySelect }: any) => {
@@ -68,8 +69,9 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
    }, [populateVoiceList]);
    useEffect(() => {
       window.addEventListener('load', handleLoad);
-   })
+   },[])
    const handleLoad = () => {
+      console.log("handleLoad",{voices,synth})
       if (voices.length <= 0 && synth) {
          const newVoices = synth?.getVoices();
          setVoices(newVoices);
@@ -127,20 +129,20 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
          selectIndex = 0;
       const next_index = selectIndex + 1;
       window.speechSynthesis.cancel();
-      console.log("Speak text::", data.source.split('#')[selectIndex]);
+     // console.log("Speak text::", data.source.split('#')[selectIndex]);
 
       let hash = "#" + (selectIndex);
       window.location.hash = hash;
-      window.scroll({
+      /* window.scroll({
          top: 0,
          left: 0,
          behavior: 'smooth'
-      });
+      }); */
 
       //window.document.getElementById(`${selectIndex}`).classList.add('slect-voice');
       let element = document.getElementById(`${selectIndex}`);
       if (element) {
-         element.classList.add('slect-voice');
+         element.classList.add('text-orange-500');
       }
       const synth = window.speechSynthesis;
       var utterance = new SpeechSynthesisUtterance(data.source.split('#')[selectIndex]);
@@ -151,7 +153,7 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
          //console.log("end::::");
          let element = document.getElementById(`${selectIndex}`);
          if (element) {
-            element.classList.remove('slect-voice');
+            element.classList.remove('text-orange-500');
          }
          if (next_index < data.source.split('#').length)
             speak(next_index);
@@ -217,6 +219,8 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
             progress: undefined
          });
       } else {
+         setPause(false);
+         setPlay(true);
          toast.warn('🦄 Chapter playing', {
             position: "bottom-center",
             autoClose: 500,
@@ -267,7 +271,7 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
       // window.document.getElementById(`${selectIndex}`).classList.add('slect-voice');
       let element = document.getElementById(`${selectIndex}`);
       if (element) {
-         element.classList.add('slect-voice');
+         element.classList.add('text-orange-500');
       }
       const synth = window.speechSynthesis;
       var utterance = new SpeechSynthesisUtterance(data.source.split('#')[selectIndex]);
@@ -279,7 +283,7 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
       utterance.addEventListener('end', function () {
          let element = document.getElementById(`${selectIndex}`);
          if (element) {
-            element.classList.remove('slect-voice');
+            element.classList.remove('text-orange-500');
          }
 
          window.speechSynthesis.cancel();
@@ -301,6 +305,39 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
 
    return (
       <div className="readercontent">
+         <div className='flex flex-wrap flex-row rounded border-slate-700 hover:border-dashed hover:border-sky-400 dark:hover:border-sky-400 border'>
+            <div className='flex-1'>
+               <div className='flex flex-row'>
+                  {play==false&& pause==false&&  <div className='rounded-sm border-sky-600 border m-1 p-2 cursor-pointer'  onClick={()=>playSpeak()}>
+                     <PlayIcon className={clsx('w-10 ',{
+                        'text-sky-500':!play,
+                        'text-orange-500 w-11':play,
+                     }
+                     )} /> <p>Play Speak {data.idDetail}</p> 
+                  </div>}
+                  {play==true&&   <div className='rounded-sm border-border-600 border m-1 p-2 cursor-pointer' onClick={()=>pauseSpeak()}>
+                     <PauseIcon className={'text-orange-500 w-11'} /><p>Pause Speak {data.idDetail}</p> 
+                  </div>}
+                  {pause==true&& <div className='rounded-sm border-orange-600 border m-1 p-2 cursor-pointer' onClick={()=>resumSpeak()}>
+                        <PlayPauseIcon className={'text-orange-500 w-11'} /> <p>Resume Speak {data.idDetail}</p> 
+                  </div>}
+               </div>
+            </div>
+            <div className='flex flex-col'>
+              {/*  <div>
+                  <p>Voice Speak</p>
+                  <select onChange={(e)=>handleChangeVoiceSelect(e)} className=" text-orange-700 text-md rounded-lg block w-full p-2.5   placeholder-sky-400" style={{color:colorSelect}}>
+                     <option value={``} >-- Select --</option>
+                        {voices.map((voice,index)=>{
+                           if(index==selectedVoice)
+                                 return  <option key={index} selected value={index} >{voice.name} ({voice.lang}) {voice.default && ' [Default]'}</option>
+                           else
+                                 return  <option  key={index} value={index} >{voice.name} ({voice.lang}) {voice.default && ' [Default]'}</option>
+                        })}
+                     </select>
+               </div> */}
+            </div>
+         </div>
          {/*     <div className="bixbox hothome" >
             <div className="releases" >
                <h2 style={{minWidth:"100px"}}><i className='fa fa-hashtag'></i> Audio:</h2>
@@ -438,7 +475,7 @@ const ContenView = ({ data, fontSize, config, lineHeight, bgColor, colorSelect, 
                   <>
                      {/*  {(k == 0) && <AdsBannerSpace />} */}
                      <a id={`${k}`} key={`${k}`}>
-                        <p style={{ paddingLeft: "10px" }}>{c}</p>
+                        <p className='pl-1 first-letter:text-2xl first-letter:pl-5'>{c}</p>
                      </a>
                      {(k % 10 == 0) && <AdsViews />}
                      {/*    {(k % 10 == 0 && k != data.source.split('#').length - 1) && <AdsBannerTop />}
