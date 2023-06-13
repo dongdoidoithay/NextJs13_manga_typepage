@@ -1,8 +1,7 @@
-/* export  const _host="http://localhost:5213";
-export const _hostwww="http://www.localhost:5213"; */
-export const _host="https://www.mangaread.lol";
-export const _hostwww="https://www.mangaread.lol"; 
-
+/*const _host="http://localhost:4024";
+const _hostwww="http://www.localhost:4024";*/   
+export const _host="https://www.manga.autos";
+export const _hostwww="https://www.manga.autos"; 
 
 
 export const _Prefix_Root_Manga_Br='mangas';
@@ -14,7 +13,6 @@ export const _Prefix_Root_Dc='comics';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
 export const _Prefix_Root_Anime='anime';
-
 
 export const _Prefix_Type_Adult_Br='adult-br';
 export const _Prefix_Type_Manga_Br='manga-br';
@@ -91,7 +89,7 @@ export const MangaBrPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"cap-",
+    startViewmanga:"capitulo-",
    
 
     endGenre:"",
@@ -135,7 +133,7 @@ export const AdultBrPrefix:ConfigPrefix={
     startArt:"",
     startStatus:"",
     startAlphaBet:"",
-    startViewmanga:"cap-",
+    startViewmanga:"capitulo-",
    
 
     endGenre:"",
@@ -328,7 +326,6 @@ export const DcPrefix:ConfigPrefix={
     url_host:_host,
     url_www_host:_hostwww,
 }
-
 export const NewsDcPrefix:ConfigPrefix={
     pageManga:`/${_Prefix_Root_NewsDc}`,
     pageGenre:`/${_Prefix_Root_NewsDc}/cat`,
@@ -413,6 +410,8 @@ export const NovelPrefix:ConfigPrefix={
     url_host:_host,
     url_www_host:_hostwww,
 }
+
+
 
 export const AnimePrefix:ConfigPrefix={
     pageManga:`/${_Prefix_Root_Anime}`,
