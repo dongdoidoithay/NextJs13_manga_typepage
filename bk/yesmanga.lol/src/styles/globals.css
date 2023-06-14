@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+    width: 100%  !important;
+    height: 100%  !important;
+    margin-left: auto  !important;
+    margin-right: auto  !important;
+  }
+  
+  .swiper-slide {
+   /*  text-align: center;
+    font-size: 18px; */
+   /*  background: #fff; */
+   /*  height: 80px; */
+  
+    /* Center slide text vertically */
+    display: flex  !important;
+   /*  justify-content: center;
+    align-items: center; */
+  }
+  

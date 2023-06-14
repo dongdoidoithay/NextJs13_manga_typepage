@@ -1,14 +1,14 @@
 /*const _host="http://localhost:4024";
 const _hostwww="http://www.localhost:4024";*/   
-export const _host="https://www.manga.autos";
-export const _hostwww="https://www.manga.autos"; 
+export const _host="https://www.welovemanga.xyz";
+export const _hostwww="https://www.welovemanga.xyz"; 
 
 
 export const _Prefix_Root_Manga_Br='mangas';
 export const _Prefix_Root_Adult_Br='adult';
-export const _Prefix_Root_Scan='manga';
+export const _Prefix_Root_Scan='info';
 export const _Prefix_Root_Raw='raw';
-export const _Prefix_Root_Adult='manhwa';
+export const _Prefix_Root_Adult='adult';
 export const _Prefix_Root_Dc='comics';
 export const _Prefix_Root_Novel='novel';
 export const _Prefix_Root_NewsDc='blog';
@@ -410,6 +410,9 @@ export const NovelPrefix:ConfigPrefix={
     url_host:_host,
     url_www_host:_hostwww,
 }
+
+
+
 
 
 

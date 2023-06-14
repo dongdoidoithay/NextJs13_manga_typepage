@@ -11,7 +11,7 @@ export default function Document() {
 
 
         {/* Google tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJE453JM33"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVDT4SMSZ5"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -21,7 +21,7 @@ export default function Document() {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-FJE453JM33');
+              gtag('config', 'G-VVDT4SMSZ5');
             }); `,
           }}
         /> 
